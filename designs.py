@@ -21,8 +21,7 @@ a_size = args.amp_size
 
 def design_amplicons(snp_vcf):
     """Returns a list of possible amplicons coordinates"""
-    # repeat_bed = "/nfs/users/nfs_r/rn8/schisto_amplicon_panel/all_problematic_regions012021.bed"
-    repeat_bed = "/Users/rnabunje/Projects/SchistoAmpliconPanel/data/repeatmasker_repeat_region.bed"
+    repeat_bed = "/path/to/low_comlexity_regions.bed"
     pls = 100  # primer landing site = length in bases to fit a primer (i.e 80-100 bases before first target SNP)
     vcf_reader = vcf.Reader(open(snp_vcf, 'r'))
     snp_list = []
@@ -138,8 +137,7 @@ def design_amplicons(snp_vcf):
 # ----------------designing primers and checking their specificity-----------------------------------------------------
 def design_primers(chrms):
     """Returns a list of specific primer sets for amplicon coordinates"""
-    # fastafile = "/lustre/scratch118/infgen/team133/rn8/panel/schistosoma_mansoni.PRJEA36577.WBPS15.genomic.fa"
-    fastafile = "/Users/rnabunje/Projects/SchistoAmpliconPanel/data/schistosoma_mansoni.PRJEA36577.WBPS14.genomic.fa"
+    fastafile = "/path/to/reference.fa"
     # primer parameters
     primer_opt = 19
     primer_min = 17
