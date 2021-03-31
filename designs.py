@@ -82,7 +82,7 @@ def design_amplicons(snp_vcf):
         chrom = chrms[i]
         chrm_intervals = []
         with open(repeat_bed) as rptfile:
-            reader = csv.DictReader(rptfile, delimiter='\t')
+            reader = csv.DictReader(rptfile, delimiter='\t', fieldnames=['chrm', "begin", "end"])
             for line in reader:
                 if line['chrm'] == chrom:
                     begin = int(line['begin'])
