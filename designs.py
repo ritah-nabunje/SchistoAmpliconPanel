@@ -109,7 +109,7 @@ def design_amplicons(snp_vcf):
                 a_snps = a_snps + spaced_df.loc[primer2_index, 'snp_count']
                 start_primer2 = (spaced_df.loc[primer2_index, 'SNP1'] + 1)
                 # end_primer2 = (spaced_df.loc[primer2_index, 'snp2'] - 1)
-                end_primer2 = (start_primer1 + a_size)
+                end_primer2 = (start_primer2 + pls)
                 if start_primer2 - end_primer1 > a_size - (2 * pls):
                     # if the start of primer 2 region is too far, skip to the end of this loop
                     primer2_index = index_list[-1]
