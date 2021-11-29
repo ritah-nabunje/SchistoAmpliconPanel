@@ -1,2 +1,2 @@
 # SchistoAmpliconPanel
-Designing primers for targeted sequencing of S. mansoni
+A flexible amplicon panel design Schistosoma mansoni. 
