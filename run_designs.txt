@@ -1,1 +1,0 @@
-python3 designs.py -v {vcf-file} -a {amplicon-size} -o {output_prefix}
