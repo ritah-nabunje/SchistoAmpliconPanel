@@ -109,20 +109,23 @@ def design_amplicons(snp_vcf):
                 a_snps = a_snps + spaced_df.loc[primer2_index, 'snp_count']
                 start_primer2 = (spaced_df.loc[primer2_index, 'SNP1'] + 1)
                 # end_primer2 = (spaced_df.loc[primer2_index, 'snp2'] - 1)
-                end_primer2 = (start_primer1 + a_size)
+                end_primer2 = (start_primer2 + pls)
                 if start_primer2 - end_primer1 > a_size - (2 * pls):
                     # if the start of primer 2 region is too far, skip to the end of this loop
                     primer2_index = index_list[-1]
+                    
+                elif a_size - (2 * pls) >= start_primer2 - end_primer1 >= a_size - (2 * pls) - 50:
+                    #store this as  a possible amplicon
+                    target = spaced_df.loc[primer1_index, 'SNP2']
+                    gap = start_primer2 - (end_primer1 + 1)
+                    amplicon_info = {'primer1_start': start_primer1, 'primer1_end': end_primer1, 'target_snp': target,
+                                     'primer2_start': start_primer2, 'primer2_end': end_primer2,
+                                     'gap': gap, 'num_snps': a_snps}
+                    amplicondf = amplicondf.append(amplicon_info, ignore_index=True)
+                    
                 else:
-                    # otherwise, store this as  a possible amplicon
-                    a_stop = int(end_primer2)
-                    if len(sorted(tree[a_start:a_stop])) < 1:
-                        target = spaced_df.loc[primer1_index, 'SNP2']
-                        gap = start_primer2 - (end_primer1 + 1)
-                        amplicon_info = {'primer1_start': start_primer1, 'primer1_end': end_primer1,
-                                         'target_snp': target, 'primer2_start': start_primer2,
-                                         'primer2_end': end_primer2, 'gap': gap, 'num_snps': a_snps}
-                        amplicondf = amplicondf.append(amplicon_info, ignore_index=True)
+                    # add the next region as well
+                    
                 primer2_index = primer2_index + 1
         rptfile.close()
         amplicondfs.append(amplicondf)
