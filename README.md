@@ -2,11 +2,27 @@
 
 SchistoAmpliPan is an automated amplicon panel designing module that optimally selects evenly spaced potential amplicons in highly polymorphic regions of the genome. It has been tested and validation will be done using Schistosoma mansoni.
 
+## Pre-requisites
+SchistoAmpliPan requires the following files to design amplicon panels;
+1. VCF file with the SNPs of interest
+2. BED file with low complexity regions of the genome.
+3. FASTA file with the reference sequence
+
+Other required parameters include;
+- the desired amplicon length
+- total amplicons 
+- output prefix
+
+The optional parameters include;
+- delta-G value threshold
+- left and right adapter sequences
+- left and right TruSeq tails
+
 ## Content of the repository
 SchistoAmpliPan - Folder containing the python scripts of the module
 
 ## Required third party software
-In order for the module to work correctly, it requires that Primer3, and NCBI-BLAST softwares are installed and can be accessed by the main directory. 
+In order for the module to work correctly, it requires that `Primer3`, and `NCBI-BLAST` softwares are installed and can be accessed by the main directory. 
 
 ## Usage
 
