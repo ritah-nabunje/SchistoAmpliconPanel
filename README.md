@@ -20,6 +20,7 @@ The optional parameters include;
 
 ## Content of the repository
 SchistoAmpliPan - Folder containing the python scripts of the module
+data - Folder containing example data files
 
 ## Required third party software
 In order for the module to work correctly, it requires that `Primer3`, and `NCBI-BLAST` softwares are installed and can be accessed by the main directory. 
