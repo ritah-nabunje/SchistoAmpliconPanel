@@ -19,7 +19,7 @@ The optional parameters include;
 - left and right TruSeq tails
 
 ## Content of the repository
-SchistoAmpliPan - Folder containing the python scripts of the module
+SchistoAmpliPan - Folder containing the python scripts of the module  
 data - Folder containing example data files
 
 ## Required third party software
